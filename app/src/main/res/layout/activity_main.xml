@@ -6,11 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/image"
+        android:scaleType="fitXY"/>
+
     <TextView
         android:id="@+id/Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Random generate"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/resultText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Result"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,6 +36,7 @@
 
     <EditText
         android:id="@+id/minNumber"
+        android:inputType="number"
         android:hint="min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,6 +48,7 @@
     <EditText
         android:id="@+id/maxNumber"
         android:hint="max"
+        android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -50,10 +60,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:text="Random"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/minNumber" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

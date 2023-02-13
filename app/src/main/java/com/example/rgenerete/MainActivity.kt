@@ -23,10 +23,18 @@ class MainActivity : AppCompatActivity() {
         button  = findViewById(R.id.button)
 
         button.setOnClickListener {
-            val minimumResult = Integer.parseInt(minimumInput.text.toString())
-            val maximumResult = Integer.parseInt(maximumInput.text.toString())
-            val result = (minimumResult..maximumResult).random()
-            textResult.text = result.toString()
+
+            val minimumResult = Integer.parseInt(minimumInput.text.ifEmpty { 0 }.toString())
+            val maximumResult = Integer.parseInt(maximumInput.text.ifEmpty { 0 }.toString())
+
+            if (minimumResult > maximumResult) {
+                textResult.text = "The maximum number is greater than the maximum"
+
+            } else {
+                val result = (minimumResult..maximumResult).random()
+                textResult.text = result.toString()
+            }
+
         }
 
     }
